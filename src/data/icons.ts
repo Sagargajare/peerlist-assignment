@@ -20,6 +20,9 @@ const pencil = "/assets/icons/pencil.svg";
 const verified = "/assets/icons/verified.svg";
 const rejected = "/assets/icons/rejected.svg";
 const tick = "/assets/icons/tick.svg";
+const rejectedFilled = "/assets/icons/rejectedFilled.svg";
+const applied = "/assets/icons/applied.svg";
+const tickFilled = "/assets/icons/tickFilled.svg";
 
 const Users = {
   yogini,
@@ -48,6 +51,9 @@ const Icons = {
   verified,
   rejected,
   tick,
+  rejectedFilled,
+  applied,
+  tickFilled,
 };
 
 export { SidebarIcons, Logo, Users, Icons };

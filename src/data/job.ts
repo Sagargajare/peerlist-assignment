@@ -1,6 +1,7 @@
 import user, { IUser } from "./user";
-
+import { v4 as uuidv4 } from "uuid";
 export interface IApplicant {
+  id: string;
   user: IUser;
   appliedAt: Date;
   experience: string;
@@ -10,6 +11,7 @@ export interface IApplicant {
 }
 
 export interface IJob {
+  id: string;
   title: string;
   company: string;
   postedAt: Date;
@@ -21,6 +23,7 @@ export interface IJob {
 }
 
 const JobData: IJob = {
+  id: uuidv4(),
   title: "Software Engineer, Front End",
   company: "Peerlist",
   postedAt: new Date("2024-01-05"),
@@ -30,6 +33,7 @@ const JobData: IJob = {
   applicantCount: 78,
   applicants: [
     {
+      id: uuidv4(),
       user: user.ronald,
       appliedAt: new Date("2024-01-05"),
       experience: "5 years",
@@ -38,6 +42,7 @@ const JobData: IJob = {
       NoticePeriod: "2 months",
     },
     {
+      id: uuidv4(),
       user: user.esther,
       appliedAt: new Date("2024-01-05"),
       experience: "5 years",
@@ -46,6 +51,7 @@ const JobData: IJob = {
       NoticePeriod: "2 months",
     },
     {
+      id: uuidv4(),
       user: user.leslie,
       appliedAt: new Date("2024-01-05"),
       experience: "5 years",
@@ -54,6 +60,7 @@ const JobData: IJob = {
       NoticePeriod: "2 months",
     },
     {
+      id: uuidv4(),
       user: user.guy,
       appliedAt: new Date("2024-01-05"),
       experience: "5 years",
@@ -62,6 +69,7 @@ const JobData: IJob = {
       NoticePeriod: "2 months",
     },
     {
+      id: uuidv4(),
       user: user.cody,
       appliedAt: new Date("2024-01-05"),
       experience: "5 years",
@@ -70,6 +78,7 @@ const JobData: IJob = {
       NoticePeriod: "2 months",
     },
     {
+      id: uuidv4(),
       user: user.esther,
       appliedAt: new Date("2024-01-05"),
       experience: "5 years",
@@ -78,6 +87,7 @@ const JobData: IJob = {
       NoticePeriod: "2 months",
     },
     {
+      id: uuidv4(),
       user: user.esther,
       appliedAt: new Date("2024-01-05"),
       experience: "5 years",

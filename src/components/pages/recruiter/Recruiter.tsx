@@ -3,6 +3,7 @@ import React from "react";
 import JobData, { IJob } from "@/data/job";
 import JobInfo from "./JobInfo";
 import ApplicantCard from "./ApplicantCard";
+import KanbanBoard from "./KanbanBoard";
 
 type Props = {
   jobData: IJob;
@@ -13,9 +14,8 @@ const Recruiter = ({ jobData }: Props) => {
   return (
     <div className="flex flex-col">
       <JobInfo />
-      {jobData.applicants.map((applicant, key) => {
-        return <ApplicantCard key={key} name={applicant.user.name} />;
-      })}
+
+      <KanbanBoard applicant={jobData.applicants} />
     </div>
   );
 };
