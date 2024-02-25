@@ -1,6 +1,6 @@
 import React from "react";
 import { DndContext, rectIntersection } from "@dnd-kit/core";
-import ApplicantCard from "./ApplicantCard";
+import ApplicantCard, { ExternalApplication } from "./ApplicantCard";
 import { IApplicant } from "@/data/job";
 import { type } from "os";
 import { useDroppable } from "@dnd-kit/core";
@@ -21,9 +21,9 @@ const KanbanLane = (props: KanbanLaneProps) => {
     id: props.status,
   });
 
-  const laneClasses = classNames("border m-1 rounded-lg w-1/3", {
+  const laneClasses = classNames("border m-1 rounded-lg w-1/3 bg-[#FAFBFC]", {
     "border-gray-200": props.status === "Applied",
-    "border-gren-500": props.status === "Shortlisted",
+    "border-[#E2F5EA]": props.status === "Shortlisted",
     "border-[#FFEAEA]": props.status === "Rejected",
   });
 
@@ -63,8 +63,17 @@ const KanbanLane = (props: KanbanLaneProps) => {
           {props.status.toUpperCase()} • {props.applicant.length}
         </div>
       </div>
-      <div className="bg-[#FAFBFC]">
+      <div className="">
         {props.applicant.map((applicant) => {
+          if (applicant?.isExternal) {
+            return (
+              <ExternalApplication
+                key={applicant.id}
+                id={applicant.id}
+                applicant={applicant}
+              />
+            );
+          }
           return (
             <ApplicantCard
               key={applicant.id}
@@ -85,7 +94,6 @@ const KanbanBoard = (props: Props) => {
 
   const onDragEnd = (e: any) => {
     const container = e.over?.id;
-    console.log(container);
     switch (container) {
       case "Rejected":
         setApplicants(

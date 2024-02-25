@@ -8,6 +8,7 @@ export interface IApplicant {
   status: "Applied" | "Rejected" | "Shortlisted";
   holdingOffer: boolean;
   NoticePeriod: string;
+  isExternal?: boolean;
 }
 
 export interface IJob {
@@ -71,6 +72,7 @@ const JobData: IJob = {
       status: "Rejected",
       holdingOffer: false,
       NoticePeriod: "2 months",
+      isExternal: true,
     },
     {
       id: uuidv4(),

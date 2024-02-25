@@ -9,7 +9,6 @@ type Props = {
 };
 
 const JobInfo = ({ jobData }: Props) => {
-  console.log(jobData);
   return (
     <div className="flex flex-row py-10 bg-[#FAFBFC] p-3 border-b border-[#E1E4E8]">
       <div>

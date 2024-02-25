@@ -10,7 +10,6 @@ type Props = {
 };
 
 const Recruiter = ({ jobData }: Props) => {
-  console.log(jobData);
   return (
     <div className="flex flex-col">
       <JobInfo jobData={jobData} />

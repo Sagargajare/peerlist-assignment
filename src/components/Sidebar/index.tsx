@@ -8,11 +8,11 @@ type Props = {};
 
 const data = [
   { name: "Scroll", url: "/", icon: SidebarIcons.scroll },
-  { name: "Projects", url: "/dashboard", icon: SidebarIcons.projects },
-  { name: "Inbox", url: "/profile", icon: SidebarIcons.inbox },
-  { name: "Jobs", url: "/job", icon: SidebarIcons.jobs },
-  { name: "Search", url: "/search", icon: SidebarIcons.search },
-  { name: "My Network", url: "/network", icon: SidebarIcons.network },
+  { name: "Projects", url: "#", icon: SidebarIcons.projects },
+  { name: "Inbox", url: "#", icon: SidebarIcons.inbox },
+  { name: "Jobs", url: "#", icon: SidebarIcons.jobs },
+  { name: "Search", url: "#", icon: SidebarIcons.search },
+  { name: "My Network", url: "#", icon: SidebarIcons.network },
 ];
 
 const SideLink = ({
@@ -80,7 +80,7 @@ const SideBarFooter = () => {
 
 const SideBar = (props: Props) => {
   return (
-    <div className="flex flex-col w-[212px] h-screen p-1">
+    <div className="flex flex-col w-[212px] h-screen sticky top-0 p-1">
       <div className="relative my-3">
         <Image
           src={"/assets/logo/logowithname.svg"}
