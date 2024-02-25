@@ -9,6 +9,7 @@ export interface IApplicant {
   holdingOffer: boolean;
   NoticePeriod: string;
   isExternal?: boolean;
+  referedBy?: IUser;
 }
 
 export interface IJob {
@@ -45,6 +46,7 @@ const JobData: IJob = {
       status: "Applied",
       holdingOffer: false,
       NoticePeriod: "2 months",
+      referedBy: user.yogini,
     },
     {
       id: uuidv4(),

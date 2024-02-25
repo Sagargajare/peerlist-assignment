@@ -23,6 +23,7 @@ const tick = "/assets/icons/tick.svg";
 const rejectedFilled = "/assets/icons/rejectedFilled.svg";
 const applied = "/assets/icons/applied.svg";
 const tickFilled = "/assets/icons/tickFilled.svg";
+const peerlist = "/assets/icons/peerlist.svg";
 
 const Users = {
   yogini,
@@ -55,6 +56,7 @@ const Icons = {
   applied,
   tickFilled,
   search,
+  peerlist,
 };
 
 export { SidebarIcons, Logo, Users, Icons };

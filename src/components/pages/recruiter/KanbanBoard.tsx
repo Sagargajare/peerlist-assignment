@@ -23,7 +23,7 @@ const KanbanLane = (props: KanbanLaneProps) => {
   });
 
   const laneClasses = classNames(
-    "border m-1 mx-2 rounded-lg w-full md:w-1/3 bg-[#FAFBFC] mx-auto",
+    "border m-1 md:mx-2 rounded-lg w-full md:w-1/3 bg-[#FAFBFC] mx-auto",
     {
       "border-gray-200": props.status === "Applied",
       "border-[#E2F5EA]": props.status === "Shortlisted",

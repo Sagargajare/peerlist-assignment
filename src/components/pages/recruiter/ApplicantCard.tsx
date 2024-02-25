@@ -10,6 +10,29 @@ type Props = {
   applicant: IApplicant;
 };
 
+type ReferralBadgeProps = {
+  applicant: IApplicant;
+};
+
+const ReferralBadge = ({ applicant }: ReferralBadgeProps) => {
+  if (!applicant?.referedBy) return null;
+
+  return (
+    <div className="flex flex-row items-center text-[10px] text-[#6A737D] font-normal">
+      <span>Ref by</span>
+      <div className="m-1">
+        <img
+          width={16}
+          height={16}
+          src={applicant.referedBy.image}
+          alt="badge"
+        />
+      </div>
+      <span className="font-semibold">{applicant.referedBy.name}</span>
+    </div>
+  );
+};
+
 export const ExternalApplication = ({ id, applicant }: Props) => {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
     id: id,
@@ -114,8 +137,11 @@ const ApplicantCard = ({ id, applicant }: Props) => {
             alt={applicant.user.name}
           />
         </div>
-        <div className="font-inter font-normal text-[10px] text-[#6A737D]">
-          Applied 1d ago
+        <div className="flex flex-row items-center">
+          <ReferralBadge applicant={applicant} />
+          <div className="ml-2 font-inter font-normal text-[10px] text-[#6A737D]">
+            Applied 1d ago
+          </div>
         </div>
       </div>
       <div>
