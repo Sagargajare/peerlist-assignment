@@ -68,6 +68,14 @@ const Users: IUsers = {
     email: "cody@example.com",
     contactNumber: "789-012-3456",
   },
+  sagar: {
+    name: "Sagar Gajare",
+    image: "/assets/profile/esther.svg",
+    jobTitle: "Software Engineer I (Frontend)",
+    company: "Helpshift Inc.",
+    email: "sggajare360@gmail.com",
+    contactNumber: "+91 7720889308",
+  },
 };
 
 export default Users;
