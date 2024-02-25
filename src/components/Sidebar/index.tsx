@@ -71,7 +71,7 @@ const SideBarFooter = () => {
       </div>
       <div className="mt-3">
         <span className="text-[10px] leading-3 text-gray-700">
-          © 2023 Peerlist Inc.
+          © 2024 Peerlist Inc.
         </span>
       </div>
     </div>
@@ -80,7 +80,7 @@ const SideBarFooter = () => {
 
 const SideBar = (props: Props) => {
   return (
-    <div className="flex flex-col w-[212px] h-screen sticky top-0 p-1">
+    <div className="hidden md:flex flex-col max-w-[220px] h-screen sticky top-0 p-1">
       <div className="relative my-3">
         <Image
           src={"/assets/logo/logowithname.svg"}
@@ -89,7 +89,7 @@ const SideBar = (props: Props) => {
           height={"32"}
         />
       </div>
-      <div className="flex flex-col flex-1">
+      <div className="mt-10 flex flex-col flex-1">
         {data.map((item, index) => {
           return <SideLink {...item} key={index} />;
         })}

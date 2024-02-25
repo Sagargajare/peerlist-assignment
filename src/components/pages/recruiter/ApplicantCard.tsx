@@ -24,7 +24,7 @@ export const ExternalApplication = ({ id, applicant }: Props) => {
 
   return (
     <div
-      className="m-2 p-4 max-w-[350px] rounded-lg border border-1 border-[#E1E4E8] bg-white"
+      className="m-2 p-4 max-w-full md:max-w-[350px] rounded-lg border border-1 border-[#E1E4E8] bg-white"
       style={style}
       {...listeners}
       {...attributes}
@@ -99,7 +99,7 @@ const ApplicantCard = ({ id, applicant }: Props) => {
 
   return (
     <div
-      className="m-2 p-4 max-w-[350px] rounded-lg border border-1 border-[#E1E4E8] bg-white"
+      className="m-2 p-4 max-w-full md:max-w-[350px] rounded-lg border border-1 border-[#E1E4E8] bg-white"
       style={style}
       {...listeners}
       {...attributes}

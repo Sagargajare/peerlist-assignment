@@ -22,11 +22,14 @@ const KanbanLane = (props: KanbanLaneProps) => {
     id: props.status,
   });
 
-  const laneClasses = classNames("border m-1 rounded-lg w-1/3 bg-[#FAFBFC]", {
-    "border-gray-200": props.status === "Applied",
-    "border-[#E2F5EA]": props.status === "Shortlisted",
-    "border-[#FFEAEA]": props.status === "Rejected",
-  });
+  const laneClasses = classNames(
+    "border m-1 mx-2 rounded-lg w-full md:w-1/3 bg-[#FAFBFC] mx-auto",
+    {
+      "border-gray-200": props.status === "Applied",
+      "border-[#E2F5EA]": props.status === "Shortlisted",
+      "border-[#FFEAEA]": props.status === "Rejected",
+    }
+  );
 
   const topBarClasses = classNames(
     "flex flex-row items-center p-2 rounded-t-lg",
@@ -151,7 +154,7 @@ const KanbanBoard = (props: Props) => {
         }}
       />
       <DndContext collisionDetection={rectIntersection} onDragEnd={onDragEnd}>
-        <div className="flex flex-row px-4">
+        <div className="flex md:flex-row flex-col px-2 md:px-4">
           <KanbanLane
             status="Rejected"
             applicant={filteredUsers.filter(
