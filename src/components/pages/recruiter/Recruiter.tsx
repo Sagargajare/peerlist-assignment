@@ -13,7 +13,7 @@ const Recruiter = ({ jobData }: Props) => {
   console.log(jobData);
   return (
     <div className="flex flex-col">
-      <JobInfo />
+      <JobInfo jobData={jobData} />
 
       <KanbanBoard applicant={jobData.applicants} />
     </div>

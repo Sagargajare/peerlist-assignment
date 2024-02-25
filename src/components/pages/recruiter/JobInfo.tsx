@@ -2,15 +2,19 @@ import React from "react";
 import Image from "next/image";
 import IconButton from "@/components/common/IconButton";
 import { Icons } from "@/data/icons";
+import { IJob } from "@/data/job";
 
-type Props = {};
+type Props = {
+  jobData: IJob;
+};
 
-const JobInfo = (props: Props) => {
+const JobInfo = ({ jobData }: Props) => {
+  console.log(jobData);
   return (
     <div className="flex flex-row py-10 bg-[#FAFBFC] p-3 border-b border-[#E1E4E8]">
       <div>
         <Image
-          src="assets/logo/companyRounded.svg"
+          src={jobData.companyLogo}
           alt="Peerlist Logo"
           width={56}
           height={56}
@@ -21,10 +25,10 @@ const JobInfo = (props: Props) => {
           <div className="flex flex-row">
             <div className="flex flex-col">
               <span className="font-inter font-semibold text-lg">
-                Software Engineer, Frontend
+                {jobData.title}
               </span>
               <span className="font-inter font-normal text-sm leading-5 text-[#0D0D0D]">
-                at Peerlist • Full time • Remote (United States, Canada)
+                at {jobData.company} • {jobData.type} • {jobData.location}
               </span>
             </div>
           </div>
@@ -41,13 +45,15 @@ const JobInfo = (props: Props) => {
         <div className="mt-10 flex flex-row justify-between">
           <div className="flex flex-row font-inter font-normal text-[12px] leading-4 text-[#0D0D0D]">
             <div className="pr-4">
-              <span className="font-semibold">78</span> Candidates
+              <span className="font-semibold">{jobData.applicantCount}</span>{" "}
+              Candidates
             </div>
             <div className="pr-4">
-              <span className="font-semibold">78</span> Applied w/ peerlist
+              <span className="font-semibold">{jobData.applicantCount}</span>{" "}
+              Applied w/ peerlist
             </div>
             <div className="pr-4">
-              <span className="font-semibold">78</span> View
+              <span className="font-semibold">{jobData.viewCount}</span> View
             </div>
           </div>
 

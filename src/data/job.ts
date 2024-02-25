@@ -14,11 +14,13 @@ export interface IJob {
   id: string;
   title: string;
   company: string;
+  companyLogo: string;
   postedAt: Date;
   location: string;
   type: "Full-time" | "Part-time" | "Contract";
   postedBy: IUser;
   applicantCount: number;
+  viewCount: number;
   applicants: IApplicant[];
 }
 
@@ -26,11 +28,13 @@ const JobData: IJob = {
   id: uuidv4(),
   title: "Software Engineer, Front End",
   company: "Peerlist",
+  companyLogo: "assets/logo/companyRounded.svg",
   postedAt: new Date("2024-01-05"),
   location: "Remote (United States, Canada)",
   type: "Full-time",
   postedBy: user.akash,
   applicantCount: 78,
+  viewCount: 2000,
   applicants: [
     {
       id: uuidv4(),
