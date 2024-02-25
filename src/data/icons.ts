@@ -17,6 +17,9 @@ const share = "/assets/icons/share.svg";
 const menu = "/assets/icons/menu.svg";
 const newtab = "/assets/icons/newtab.svg";
 const pencil = "/assets/icons/pencil.svg";
+const verified = "/assets/icons/verified.svg";
+const rejected = "/assets/icons/rejected.svg";
+const tick = "/assets/icons/tick.svg";
 
 const Users = {
   yogini,
@@ -42,6 +45,9 @@ const Icons = {
   menu,
   newtab,
   pencil,
+  verified,
+  rejected,
+  tick,
 };
 
 export { SidebarIcons, Logo, Users, Icons };
