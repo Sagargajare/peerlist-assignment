@@ -1,5 +1,7 @@
-import Image from "next/image";
+import Recruiter from "@/components/pages/recruiter/Recruiter";
+import JobData from "@/data/Job";
 
 export default function Home() {
-  return <div>HomePage</div>;
+  const jobData = JobData;
+  return <Recruiter jobData={jobData} />;
 }

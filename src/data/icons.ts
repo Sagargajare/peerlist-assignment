@@ -13,6 +13,11 @@ const loom = "/assets/sidebar/loom.svg";
 
 const yogini = "/assets/profile/yogini.svg";
 
+const share = "/assets/icons/share.svg";
+const menu = "/assets/icons/menu.svg";
+const newtab = "/assets/icons/newtab.svg";
+const pencil = "/assets/icons/pencil.svg";
+
 const Users = {
   yogini,
 };
@@ -32,4 +37,11 @@ const SidebarIcons = {
   loom,
 };
 
-export { SidebarIcons, Logo, Users };
+const Icons = {
+  share,
+  menu,
+  newtab,
+  pencil,
+};
+
+export { SidebarIcons, Logo, Users, Icons };
