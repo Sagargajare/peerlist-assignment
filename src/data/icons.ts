@@ -54,6 +54,7 @@ const Icons = {
   rejectedFilled,
   applied,
   tickFilled,
+  search,
 };
 
 export { SidebarIcons, Logo, Users, Icons };

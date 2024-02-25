@@ -6,6 +6,7 @@ import { type } from "os";
 import { useDroppable } from "@dnd-kit/core";
 import { Icons } from "@/data/icons";
 import classNames from "classnames";
+import Search from "./Search";
 
 type Props = {
   applicant: IApplicant[];
@@ -92,6 +93,8 @@ const KanbanBoard = (props: Props) => {
     props.applicant
   );
 
+  const [searchTerm, setSearchTerm] = React.useState("");
+
   const onDragEnd = (e: any) => {
     const container = e.over?.id;
     switch (container) {
@@ -130,29 +133,46 @@ const KanbanBoard = (props: Props) => {
     }
   };
 
+  const filteredUsers = applicants.filter(
+    (applicant) =>
+      applicant.user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      applicant.user.jobTitle
+        .toLowerCase()
+        .includes(searchTerm.toLowerCase()) ||
+      applicant.user.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      applicant.user.contactNumber.includes(searchTerm)
+  );
+
   return (
-    <DndContext collisionDetection={rectIntersection} onDragEnd={onDragEnd}>
-      <div className="flex flex-row">
-        <KanbanLane
-          status="Rejected"
-          applicant={applicants.filter(
-            (applicant) => applicant.status === "Rejected"
-          )}
-        />
-        <KanbanLane
-          status="Applied"
-          applicant={applicants.filter(
-            (applicant) => applicant.status === "Applied"
-          )}
-        />
-        <KanbanLane
-          status="Shortlisted"
-          applicant={applicants.filter(
-            (applicant) => applicant.status === "Shortlisted"
-          )}
-        />
-      </div>
-    </DndContext>
+    <div>
+      <Search
+        onChange={(e) => {
+          setSearchTerm(e.target.value);
+        }}
+      />
+      <DndContext collisionDetection={rectIntersection} onDragEnd={onDragEnd}>
+        <div className="flex flex-row px-4">
+          <KanbanLane
+            status="Rejected"
+            applicant={filteredUsers.filter(
+              (applicant) => applicant.status === "Rejected"
+            )}
+          />
+          <KanbanLane
+            status="Applied"
+            applicant={filteredUsers.filter(
+              (applicant) => applicant.status === "Applied"
+            )}
+          />
+          <KanbanLane
+            status="Shortlisted"
+            applicant={filteredUsers.filter(
+              (applicant) => applicant.status === "Shortlisted"
+            )}
+          />
+        </div>
+      </DndContext>
+    </div>
   );
 };
 
